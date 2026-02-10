@@ -1,0 +1,64 @@
+File:app.js
+
+
+const fs = require("fs"); 
+ 
+// 1. Write file 
+fs.writeFile("data.txt", "Hello Node.js File System!", (err) => { 
+ if (err) { 
+      console.log("Error writing file"); 
+       return; 
+ } 
+console.log("File written successfully"); 
+ 
+// 2. Read file 
+fs.readFile("data.txt", "utf8", (err, data) => { 
+ if (err) { 
+      console.log("Error reading file"); 
+      return; 
+ } 
+console.log("\nFile content after write:"); 
+console.log(data); 
+ 
+// 3. Append file 
+fs.appendFile("data.txt", "\nThis is appended text.", (err) => { 
+   if (err) { 
+                   console.log("Error appending file"); 
+          return; 
+   } 
+  console.log("\nData appended successfully"); 
+ 
+  // 4. Read again after append 
+  fs.readFile("data.txt", "utf8", (err, newData) => { 
+     if (err) { 
+            console.log("Error reading file"); 
+           return; 
+     } 
+    console.log("\nFile content after append:"); 
+    console.log(newData); 
+ 
+    // 5. Rename file
+fs.rename("data.txt", "newdata.txt", (err) => { 
+       if (err) { 
+              console.log("Error renaming file"); 
+              return; 
+       } 
+              console.log("\nFile renamed successfully"); 
+       console.log("New file name: newdata.txt"); 
+ 
+      // 6. Delete file 
+      fs.unlink("newdata.txt", (err) => { 
+         if (err) { 
+                console.log("Error deleting file"); 
+                   return; 
+         } 
+        console.log("\nFile deleted successfully"); 
+      }); 
+    }); 
+  }); 
+}); 
+ 
+}); 
+});
+
+Output command: node app.js
