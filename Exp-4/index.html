@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Food Delivery</h3>
+
+<input type="radio" name="r">Pizza Hut
+<input type="radio" name="r">KFC
+<input type="radio" name="r">Dominos<br><br>
+
+<input type="text" id="food" placeholder="Food item"><br><br>
+
+<button onclick="order()">Place Order</button>
+
+<script>
+function order(){
+  var food = document.getElementById("food").value;
+  if(food != "")
+    alert("Order placed");
+}
+</script>
+
+</body>
+</html>
