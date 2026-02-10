@@ -8,4 +8,5 @@ http.createServer((req,res)=>{
       res.end(d);
     });
   }
-}).listen(3000);
+}).listen(3000, () => {
+  console.log("Server running at http://localhost:3000")});
