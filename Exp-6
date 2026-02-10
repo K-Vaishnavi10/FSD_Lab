@@ -1,11 +1,11 @@
 1. Sample Dataset (Students Collection) 
 {  
-} 
 "student_id": 101, 
 "name": "Anita Sharma", 
 "department": "Computer Science", 
 "year": 3, 
 "cgpa": 8.4 
+} 
 Database: collegeDB 
 Collection: students 
 
