@@ -30,13 +30,13 @@ year: 2,
 cgpa: 7.9 
 },
 { 
-} 
-] 
 student_id: 103, 
 name: "Neha Singh" 
 department: "Computer Science", 
 year: 4, 
 cgpa: 9.1 
+} 
+] 
 Documents are added to the students collection. 
 
 
