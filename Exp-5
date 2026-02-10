@@ -1,0 +1,20 @@
+1. Database Commands  
+ 
+ View all databases  
+show dbs  
+ Create a new or switch databases 
+use 235f9
+ View current database  
+db  
+ Delete current database  
+db.dropDatabase() 
+   
+
+2. Collection Commands  
+  
+ Show collections  
+  show collections  
+ Create a collection named 'students' 
+  db.createCollection('comments') 
+ Drop a collection named 'students'  
+  db.students.drop()
