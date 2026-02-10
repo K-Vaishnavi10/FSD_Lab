@@ -1,0 +1,83 @@
+1. Sample Dataset (Students Collection) 
+{  
+} 
+"student_id": 101, 
+"name": "Anita Sharma", 
+"department": "Computer Science", 
+"year": 3, 
+"cgpa": 8.4 
+Database: collegeDB 
+Collection: students 
+
+
+2. Create Operation (Insert Data) 
+a) Insert One Document 
+use collegeDB 
+db.students.insertOne({ 
+student_id: 101, 
+name: "Anita Sharma", 
+department: "Computer Science", 
+year: 3, 
+cgpa: 8.4 
+}) 
+b) Insert Multiple Documents 
+db.students.insertMany([ 
+{ 
+student_id: 102, 
+name: "Rahul Verma", 
+department: "Information Technology", 
+year: 2, 
+cgpa: 7.9 
+},
+{ 
+} 
+] 
+student_id: 103, 
+name: "Neha Singh" 
+department: "Computer Science", 
+year: 4, 
+cgpa: 9.1 
+Documents are added to the students collection. 
+
+
+3. Read Operation (Retrieve Data) 
+a) Retrieve All Documents 
+db.students.find()
+b) Retrieve with Condition 
+db.students.find({ department: "Computer Science" })
+c) Retrieve Specific Fields (Projection) 
+db.students.find( 
+{ year: 3 }, 
+{ name: 1, cgpa: 1, _id: 0 } 
+)
+d) Find One Document 
+db.students.findOne({ student_id: 102 })
+
+
+4. Update Operation (Modify Data) 
+a) Update One Document 
+db.students.updateOne( 
+{ student_id: 101 }, 
+{ $set: { cgpa: 8.8 } } 
+)
+b) Update Multiple Documents 
+db.students.updateMany( 
+{ department: "Computer Science" }, 
+{ $set: { department: "CSE" } } 
+)
+c) Increment a Field 
+db.students.updateOne( 
+{ student_id: 102 }, 
+{ $inc: { cgpa: 0.2 } } 
+) 
+db.students.find()
+
+
+5. Delete Operation (Remove Data) 
+a) Delete One Document 
+db.students.deleteOne({ student_id: 103 })
+b) Delete Multiple Documents 
+db.students.deleteMany({ year: 2}
+c) Delete All Documents (Careful!) 
+db.students.deleteMany({}) 
+db.students.find()
