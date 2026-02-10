@@ -1,0 +1,70 @@
+What is MongoDB
+MongoDB is a popular NoSQL database that stores data in flexible, JSON-like documents. Unlike traditional relational databases, it uses a dynamic schema, making it highly scalable and ideal for modern applications, especially when paired with Node.js.
+
+Steps to Install MongoDB
+Step 1: Open Official Website
+Open your web browser and visit the MongoDB Download Center: https://www.mongodb.com/try/download/community
+
+Step 2: Download MongoDB Community Server
+On the website, ensure Community Server is selected. Choose the latest version, your OS (Windows, macOS, or Linux), and select the MSI (Windows) or TGZ/brew (macOS/Linux) package. Click Download.
+
+Step 3: Install MongoDB
+Windows: * Run the .msi file.
+
+Choose "Complete" setup type.
+
+Select "Run service as Network Service user" (this keeps MongoDB running in the background).
+
+Ensure "Install MongoDB Compass" is checked (this gives you a GUI to see your data). Click Install.
+
+macOS (using Homebrew):
+
+Open Terminal and run: brew tap mongodb/brew
+
+Then run: brew install mongodb-community
+
+Linux (Ubuntu):
+
+Import the public key and create the list file (refer to official docs for your specific version).
+
+Run: sudo apt update
+
+Run: sudo apt install -y mongodb-org
+
+Step 4: Set Environment Variables (Windows Only)
+To run MongoDB from any command prompt:
+
+Copy the path to the bin folder (usually C:\Program Files\MongoDB\Server\7.0\bin).
+
+Search for "Edit the system environment variables" in Windows.
+
+Click Environment Variables > Select Path > Click Edit > New > Paste the path and click OK.
+
+Step 5: Verify MongoDB Installation
+Open a new Command Prompt / Terminal and run:
+
+mongod --version
+
+mongosh (This opens the MongoDB Shell)
+
+If you see the version number and the test> prompt, MongoDB is ready.
+
+Step 6: Installation Completed
+MongoDB is now installed. You can use MongoDB Compass (the desktop app) to interact with your database visually or use the shell for command-line operations.
+
+Running MongoDB (Service and Shell)
+Start the Service (Windows): It usually starts automatically. If not, open "Services," find MongoDB Server, and click Start.
+
+Start the Service (macOS/Linux): * brew services start mongodb-community (macOS)
+
+sudo systemctl start mongod (Linux)
+
+Access the Database:
+
+Type mongosh in your terminal to enter the shell.
+
+To see your databases, type: show dbs
+
+To exit the shell, type: exit
+
+Connect via Node.js: Use the connection string: mongodb://localhost:27017
