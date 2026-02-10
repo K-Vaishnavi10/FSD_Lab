@@ -18,3 +18,62 @@ db.dropDatabase()
   db.createCollection('comments') 
  Drop a collection named 'students'  
   db.students.drop()
+
+
+3. Document (Row) Commands  
+  
+ Show all documents in a collection  
+  db.students.find()  
+ Show all documents (pretty format)  
+  db.students.find().pretty()  
+ Find the first document matching a filter  
+  db.students.findOne({name: “Prani”})  
+ Insert one document  
+  db.students.insertOne({name:"Prani",lang:"Java",member_since:6}) 
+ Insert many documents  
+  db.students.insertMany([  
+  {name: 'Sun', lang: 'JavaScript', member_since: 3},  
+  {name: 'Mon', lang: 'Python', member_since: 3},  
+  {name: 'Tues', lang: 'Java', member_since: 4}  
+  ]) 
+ Search by field  
+  db.students.find({lang: 'Python'})  
+ Limit the number of results  
+  db.students.find().limit(2)  
+ Skip results (useful for pagination)  
+  db.students.find().skip(2).limit(2)  
+ Count the number of matching documents  
+  db.students.countDocuments({lang: 'Python'})
+
+
+4. Update Commands  
+  
+ Update one document  
+  db.students.updateOne(  
+               {name: 'Wed'},  
+   {$set: {name: ‘Prani', lang: 'Java', member_since: 3}},  
+   {upsert: true}  
+  )  
+ Update many documents  
+  db.students.updateMany(  
+   {lang: 'JavaScript'},  
+   {$set: {verified: true}}  
+  )  
+ Increment a field 
+db.students.updateOne(  
+   {name: 'Sun'},  
+   {$inc: {member_since: 2}}  
+  )  
+ Rename a field  
+  db.students.updateOne(  
+   {name: 'Sun'},  
+   {$rename: {member_since: 'member'}}  
+  )
+
+
+5. Delete Commands  
+ 
+ Delete one document  
+  db.students.deleteOne({name: 'Prani’})  
+ Delete many documents  
+  db.students.deleteMany({lang: ‘Java’})
