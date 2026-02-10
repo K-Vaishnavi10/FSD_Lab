@@ -1,0 +1,58 @@
+What is Node.js
+Node.js is an open-source JavaScript runtime environment that allows JavaScript to run outside the browser. It is built on the V8 JavaScript engine and is mainly used to develop backend applications, APIs, and server-side programs.
+
+Steps to Install Node.js
+Step 1: Open Official Website
+Open any web browser and visit the official Node.js website: https://nodejs.org/
+
+Step 2: Download Node.js
+On the website, select the LTS (Long Term Support) version and download the installer suitable for your operating system.
+
+Step 3: Install Node.js (Windows / macOS / Linux)
+Windows: Open the downloaded .msi file, click Next, accept the license agreement, keep default options, click Install, and complete the setup.
+
+macOS: Open the downloaded .pkg file, click Continue, click Install, enter the system password, and allow the installation to complete.
+
+Linux (Ubuntu/Debian): Open Terminal and run the following commands:
+
+sudo apt update
+
+sudo apt install nodejs npm
+
+Step 4: Verify Node.js Installation
+Open Command Prompt / Terminal and run:
+
+node -v
+
+npm -v
+
+If version numbers are displayed, Node.js is installed successfully.
+
+Step 5: Optional – Update npm
+To update npm to the latest version, run:
+
+npm install -g npm
+
+Step 6: Installation Completed
+Node.js is now ready to use, and you can start running JavaScript files and building backend applications.
+
+Running Node.js (File and Project)
+Open Command Prompt / Terminal
+
+Navigate to the project or file folder using cd
+
+To run a single JavaScript file, use:
+
+node app.js
+
+To run a Node.js project, ensure package.json exists
+
+Install dependencies if required:
+
+npm install
+
+Start the project using:
+
+npm start
+
+If output appears, Node.js is running successfully
